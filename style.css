@@ -1,0 +1,460 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #08030e;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#fireworks, #stars {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#stars { z-index: 0; }
+#fireworks { z-index: 1; }
+
+.vignette {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: radial-gradient(ellipse, transparent 35%, #05010bbb 100%);
+}
+
+.screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    text-align: center;
+    background:
+        radial-gradient(ellipse at center, #36133d 0%, #100719 48%, #05020b 100%);
+    transition: opacity 1.5s;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.intro-glow {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: #ffb300;
+    filter: blur(150px);
+    opacity: .22;
+}
+
+.intro-content {
+    position: relative;
+    padding: 25px;
+    animation: appear 2s ease;
+}
+
+.small-stars {
+    color: #ffd66b;
+    letter-spacing: 15px;
+    margin-bottom: 25px;
+    font-size: 22px;
+}
+
+.intro-subtitle, .top-label {
+    color: #e9bd70;
+    letter-spacing: 5px;
+    font-size: 10px;
+}
+
+.intro-content h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(45px, 9vw, 85px);
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.intro-content h1 span {
+    color: #ffd36b;
+    text-shadow: 0 0 30px #ff9d00;
+}
+
+.intro-description {
+    color: #d6c5df;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+#magicButton {
+    border: 1px solid #ffdc89;
+    background: linear-gradient(135deg, #9d4b0a, #e5a72b, #a64e0a);
+    color: white;
+    padding: 17px 32px;
+    border-radius: 50px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 25px #ffb52b88;
+    transition: .4s;
+    animation: pulse 2s infinite;
+}
+
+#magicButton:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 50px #ffb52b;
+}
+
+.tap-note {
+    margin-top: 25px;
+    color: #a997b5;
+    font-size: 10px;
+}
+
+@keyframes pulse {
+    50% { box-shadow: 0 0 45px #ffb52b; }
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(35px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* COUNTDOWN */
+
+#countdown {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background: #08030e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#countNumber {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(100px, 25vw, 200px);
+    color: #ffda7d;
+    text-shadow: 0 0 60px orange;
+    animation: countPop .9s;
+}
+
+#countdown p {
+    letter-spacing: 5px;
+    color: #e6bd76;
+    font-size: 11px;
+}
+
+@keyframes countPop {
+    from { transform: scale(2); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* MAIN CELEBRATION */
+
+#celebration {
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: radial-gradient(ellipse at center, #2a0d2c55, transparent 70%);
+}
+
+.top-label {
+    position: absolute;
+    top: 6%;
+    animation: appear 2s;
+}
+
+/* MANDALA */
+
+#mandala {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: mandalaAppear 3s 1s forwards;
+}
+
+.mandala-ring {
+    position: absolute;
+    inset: 0;
+    border: 1px solid #ffd56b;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #ffbb4777;
+}
+
+.ring-two {
+    inset: 12px;
+    border-style: dashed;
+    animation: rotate 30s linear infinite;
+}
+
+.ring-three {
+    inset: 25px;
+    border-width: 2px;
+    border-color: #ffac35;
+    animation: rotate 20s linear infinite reverse;
+}
+
+.mandala-center {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-size: 45px;
+    color: #ffdf8c;
+    text-shadow: 0 0 25px orange;
+}
+
+@keyframes rotate {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes mandalaAppear {
+    to { opacity: 1; transform: scale(1.1); }
+}
+
+/* WISH */
+
+.wish-content {
+    max-width: 750px;
+    padding: 15px;
+    z-index: 5;
+    opacity: 0;
+    animation: wishAppear 2s 2.5s forwards;
+}
+
+@keyframes wishAppear {
+    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(30px); }
+}
+
+.wish-top {
+    font-size: 9px;
+    color: #eac37a;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+#wishTitle {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(35px, 7vw, 75px);
+    color: #fff3cf;
+    text-shadow: 0 0 35px #ffae32;
+}
+
+#wishTitle span {
+    display: block;
+    color: #ffd46b;
+}
+
+.gold-line {
+    height: 1px;
+    width: 100px;
+    background: linear-gradient(90deg, transparent, gold, transparent);
+    margin: 25px auto;
+}
+
+#wishMessage {
+    color: #eee0e9;
+    font-size: clamp(12px, 2vw, 16px);
+    line-height: 2.1;
+    max-width: 550px;
+    min-height: 85px;
+    margin: auto;
+}
+
+.sanskrit {
+    font-family: 'Cinzel', serif;
+    color: #ffc95c;
+    font-size: 25px;
+    margin-top: 15px;
+    text-shadow: 0 0 20px orange;
+}
+
+.blessing {
+    color: #d5b7ca;
+    font-family: 'Great Vibes', cursive;
+    font-size: 25px;
+    margin-top: 12px;
+}
+
+.signature {
+    margin-top: 25px;
+    color: #e9c27e;
+    font-size: 9px;
+    letter-spacing: 4px;
+}
+
+/* DIYAS */
+
+.diyas {
+    position: absolute;
+    bottom: -180px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    z-index: 6;
+    animation: riseDiyas 3s 1s forwards;
+    pointer-events: none;
+}
+
+@keyframes riseDiyas {
+    to { bottom: 12px; }
+}
+
+.diya {
+    position: relative;
+    width: 50px;
+    height: 35px;
+    animation: diyaFloat 3s infinite ease-in-out;
+}
+
+.diya-two { animation-delay: .4s; transform: scale(.8); }
+.diya-three { animation-delay: .8s; transform: scale(1.2); }
+.diya-four { animation-delay: 1.2s; transform: scale(.8); }
+.diya-five { animation-delay: 1.6s; }
+
+.diya-bowl {
+    position: absolute;
+    bottom: 0;
+    width: 50px;
+    height: 23px;
+    border-radius: 10px 10px 50% 50%;
+    background: linear-gradient(#ffcc64, #9a3506);
+    box-shadow: 0 0 20px #ff9b16;
+}
+
+.flame {
+    position: absolute;
+    z-index: 2;
+    width: 14px;
+    height: 23px;
+    background: linear-gradient(white, #ffed70, #ff7b00);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    left: 18px;
+    top: -20px;
+    box-shadow: 0 0 25px orange;
+    animation: flicker .5s infinite alternate;
+}
+
+@keyframes flicker {
+    to { transform: rotate(-40deg) scale(.85); }
+}
+
+@keyframes diyaFloat {
+    50% { transform: translateY(-8px); }
+}
+
+/* LANTERN */
+
+#lantern {
+    position: absolute;
+    font-size: 45px;
+    bottom: -100px;
+    right: 12%;
+    animation: lanternRise 12s 5s linear infinite;
+    filter: drop-shadow(0 0 20px orange);
+    z-index: 4;
+}
+
+@keyframes lanternRise {
+    to { bottom: 120%; transform: translateX(-50px) rotate(10deg); }
+}
+
+/* BUTTON */
+
+#replayButton {
+    position: absolute;
+    bottom: 75px;
+    z-index: 10;
+    background: transparent;
+    border: 1px solid #e8bd72;
+    color: #ffe0a0;
+    border-radius: 30px;
+    padding: 10px 22px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+#replayButton:hover {
+    background: #a65d1a55;
+}
+
+.footer {
+    position: absolute;
+    bottom: 25px;
+    color: #a98eaa;
+    font-size: 8px;
+    letter-spacing: 3px;
+    z-index: 8;
+}
+
+/* MOBILE */
+
+@media(max-width: 600px) {
+    #mandala {
+        width: 110px;
+        height: 110px;
+        margin-bottom: 20px;
+    }
+
+    .wish-content {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .wish-top {
+        letter-spacing: 2px;
+        font-size: 8px;
+    }
+
+    .diyas {
+        bottom: -180px;
+    }
+
+    .diya {
+        transform: scale(.7);
+    }
+
+    #replayButton {
+        bottom: 65px;
+    }
+
+    .footer {
+        bottom: 20px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#08030e">
+    <title>The Grand Diwali Magic 🪔</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="fireworks"></canvas>
+    <canvas id="stars"></canvas>
+
+    <div class="vignette"></div>
+
+    <!-- INTRO SCREEN -->
+    <section id="intro" class="screen">
+        <div class="intro-glow"></div>
+        <div class="intro-content">
+            <div class="small-stars">✦ ✧ ✦</div>
+            <p class="intro-subtitle">A LITTLE MAGIC IS WAITING FOR YOU</p>
+            <h1>Something<br><span>Magical</span></h1>
+            <p class="intro-description">This Diwali, let the sky tell a story...</p>
+            <button id="magicButton">
+                ✨ CLICK TO SEE THE MAGIC ✨
+            </button>
+            <p class="tap-note">Turn up your volume for the experience ♫</p>
+        </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section id="countdown" class="hidden">
+        <div id="countNumber">3</div>
+        <p>GET READY FOR THE MAGIC</p>
+    </section>
+
+    <!-- MAIN CELEBRATION -->
+    <main id="celebration" class="hidden">
+
+        <div class="top-label">✦ THE FESTIVAL OF LIGHTS ✦</div>
+
+        <div id="mandala">
+            <div class="mandala-ring ring-one"></div>
+            <div class="mandala-ring ring-two"></div>
+            <div class="mandala-ring ring-three"></div>
+            <div class="mandala-center">ॐ</div>
+        </div>
+
+        <div class="wish-content">
+            <p class="wish-top">A FESTIVAL OF LIGHT, LOVE & HAPPINESS</p>
+
+            <h1 id="wishTitle">
+                Happy <span>Diwali!</span>
+            </h1>
+
+            <div class="gold-line"></div>
+
+            <p id="wishMessage"></p>
+
+            <p class="sanskrit">
+                शुभ दीपावली
+            </p>
+
+            <p class="blessing">
+                May every diya bring a new reason to smile.
+            </p>
+
+            <div class="signature">
+                WITH LOVE & LIGHT ❤️
+            </div>
+        </div>
+
+        <!-- RISING DIYAS -->
+        <div class="diyas">
+            <div class="diya diya-one">
+                <div class="flame"></div>
+                <div class="diya-bowl"></div>
+            </div>
+
+            <div class="diya diya-two">
+                <div class="flame"></div>
+                <div class="diya-bowl"></div>
+            </div>
+
+            <div class="diya diya-three">
+                <div class="flame"></div>
+                <div class="diya-bowl"></div>
+            </div>
+
+            <div class="diya diya-four">
+                <div class="flame"></div>
+                <div class="diya-bowl"></div>
+            </div>
+
+            <div class="diya diya-five">
+                <div class="flame"></div>
+                <div class="diya-bowl"></div>
+            </div>
+        </div>
+
+        <!-- FLOATING LANTERN -->
+        <div id="lantern">🏮</div>
+
+        <button id="replayButton">↻ EXPERIENCE AGAIN</button>
+
+        <p class="footer">MAY YOUR LIFE ALWAYS SHINE ✨</p>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
